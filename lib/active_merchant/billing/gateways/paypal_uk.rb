@@ -8,6 +8,10 @@ module ActiveMerchant #:nodoc:
       self.supported_countries = ['UK']
       self.homepage_url = 'https://www.paypal-business.co.uk/process-online-payments-with-paypal/index.htm'
       self.display_name = 'PayPal Website Payments Pro (UK)'
+      
+      def express
+        @express ||= PaypalExpressUkGateway.new(@options)
+      end
     end
   end
 end
